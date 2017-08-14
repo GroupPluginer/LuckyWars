@@ -1,3 +1,5 @@
 # LuckyWars
 
-Czech version of LuckyWars BY KaitoDoDo
+لكي وارز معرب
+
+# @cvv.119
