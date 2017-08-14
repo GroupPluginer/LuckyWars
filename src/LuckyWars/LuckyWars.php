@@ -170,7 +170,7 @@ class LuckyWars extends PluginBase implements Listener {
 									array_push($this->arenas,$args[1]);
 									$this->currentLevel = $args[1];
 									$this->mode = 1;
-									$player->sendMessage($this->prefix . "Touch the spawn points!");
+									$player->sendMessage($this->prefix . "ﻥﻮﺒﺴﻟﺍ ﻖﻃﺎﻨﻣ ﺲﻤﻟﺍ");
 									$player->setGamemode(1);
                                                                         array_push($this->op, $player->getName());
 									$player->teleport($this->getServer()->getLevelByName($args[1])->getSafeSpawn(),0,0);
@@ -179,7 +179,7 @@ class LuckyWars extends PluginBase implements Listener {
 								}
 								else
 								{
-									$player->sendMessage($this->prefix . "ERROR missing world.");
+									$player->sendMessage($this->prefix . "ﺩﻮﺟﻮﻣ ﺮﻴﻏ ﻢﻟﺎﻋ ﺀﺎﻄﺧ.");
 								}
 							}
 							else
@@ -189,7 +189,7 @@ class LuckyWars extends PluginBase implements Listener {
 						}
 						else
 						{
-							$player->sendMessage($this->prefix . "Invalid Command.");
+							$player->sendMessage($this->prefix . "ﺩﻮﺟﻮﻣ ﺮﻴﻏ ﺮﻣﺍ.");
 						}
 					}
 					else
@@ -211,7 +211,7 @@ class LuckyWars extends PluginBase implements Listener {
                                         {
                                         $config->set($args[0] . "StartTime", 10);
                                         $config->save();
-                                        $player->sendMessage($this->prefix . "§aStaruji za 10...");
+                                        $player->sendMessage($this->prefix . "§aﻲﻧﺍﻮﺛ ٠١ ﻰﻘﺒﺗ ﺏﻭﻻﺍ ﻦﻣ ﺮﻣﺎﺑ...");
                                         }
                                         }
                                         else
@@ -222,7 +222,7 @@ class LuckyWars extends PluginBase implements Listener {
                                             {
                                             $config->set($level . "StartTime", 10);
                                             $config->save();
-                                            $player->sendMessage($this->prefix . "§aStartuji za 10...");
+                                            $player->sendMessage($this->prefix . "§aﻲﻧﺍﻮﺛ ٠١ ﻰﻘﺒﺗ ﺏﻭﻻﺍ ﻦﻣ ﺮﻣﺎﺑ...");
                                             }
                                         }
                                 }
@@ -240,11 +240,11 @@ class LuckyWars extends PluginBase implements Listener {
 		{
 			if(($this->mode==26)&&(in_array($player->getName(), $this->op)))
 			{
-				$tile->setText(TE::AQUA . "[Join]",TE::YELLOW  . "0 / 12","§f" . $this->currentLevel,$this->prefix);
+				$tile->setText(TE::AQUA . "[ﻝﻮﺧﺩ]",TE::YELLOW  . "0 / 12","§f" . $this->currentLevel,$this->prefix);
 				$this->refreshArenas();
 				$this->currentLevel = "";
 				$this->mode = 0;
-				$player->sendMessage($this->prefix . "Arena byla registrovana!");
+				$player->sendMessage($this->prefix . "ﻝﻮﺧﺪﻟﺍ ﻢﺗ!");
                                 array_shift($this->op);
 			}
 			else
@@ -252,7 +252,7 @@ class LuckyWars extends PluginBase implements Listener {
 				$text = $tile->getText();
 				if($text[3] == $this->prefix)
 				{
-					if($text[0]==TE::AQUA . "[Join]")
+					if($text[0]==TE::AQUA . "[ﻝﻮﺧﺩ]")
 					{
 						$config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
                                                 $slots = new Config($this->getDataFolder() . "/slots.yml", Config::YAML);
@@ -273,7 +273,7 @@ class LuckyWars extends PluginBase implements Listener {
                                                 $player->sendMessage($this->prefix . "vstoupil do hry");
                                                 foreach($level->getPlayers() as $playersinarena)
                                                 {
-                                                $playersinarena->sendMessage($player->getNameTag() ." vstoupil do areny");
+                                                $playersinarena->sendMessage($player->getNameTag() ." ﻢﻴﻘﻟﺍ ﻞﺧﺩ");
                                                 }
 						$spawn = new Position($thespawn[0]+0.5,$thespawn[1],$thespawn[2]+0.5,$level);
 						$level->loadChunk($spawn->getFloorX(), $spawn->getFloorZ());
